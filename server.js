@@ -3,6 +3,10 @@ const app = express();
 const hbs = require('hbs');
 const router = express.Router();
 
+// Librería para mongoDB:
+var mongoose = require('mongoose');
+
+
 //importar las rutas:
 const indexRoutes = require('./routes/index');
 
@@ -20,7 +24,19 @@ app.set('view engine','hbs');
 // cada vez que el server reciba peticion a /, usaremos indexRoutes
 app.use('/', indexRoutes);
  
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+// configurar mongoose para ejecutar promesas
+mongoose.Promise = global.Promise;
+
+
+// callback de conexión con la base de datos:
+mongoose.connect("mongodb+srv://hipermedia:8ROJaRfyxBM1beyB@cluster0.dcafu.mongodb.net/test?retryWrites=true&w=majority",
+{
+    useNewUrlParser: true, useUnifiedTopology: true
+}).then(() => {
+    console.log('La conexión con la base de datos se hizo correctamente');
+
+    app.listen(port, () => {
+        console.log(`Servidor corriendo en http://localhost:${port}`);
+    });
+})
 

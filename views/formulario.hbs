@@ -5,14 +5,39 @@
        
         <section id="content">
 
-        <h2>Formulario</h2>
-        <h1>Ingrese base: </h1>
+<div class="center">
+<section id="contentForm">
+    
+    <h1 class="subheader">Formulario Alumnos</h1>
 
-        <form action="/calcula" method="POST">
-            <input type="text" name="id" placeholder="Ingrese la base">
+    <p align="center">
+    <form action="/add" method="POST">         
+            <label for="nombres">Nombres y Apellidos</label>
+            <input type="text" name="nombres" />
             <br>
-            <button type="submit">Enviar</button>
-        </form>
+            <br>
+
+        
+            <label for="contacto">Número Contacto</label>
+            <input type="text" name="contacto" />
+            <br>
+            <br>
+
+            <label for="comentario">Comentarios</label>
+            <textarea name="comentarios" id="" cols="30" rows="10"></textarea>
+             <br>
+            <p align="center"><input type="submit" value="Enviar" class="btn btn-success"/></p>
+    </form> 
+    {{ mensaje }}
+    </p>
+        
+
+</section>
+<!--clearfix permite acomodar el footer para que no se monte arriba-->
+<div class="clearfix"></div>
+</div>
+
+        </section>
 
         </section>
         

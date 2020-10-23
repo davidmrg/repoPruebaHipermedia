@@ -4,6 +4,9 @@ const express = require('express');
 const router = express.Router();
 const fs = require ('fs');
 
+
+const Alumnos = require('../models/alumnos')
+
 // configurar callback para controlar ruta /
 router.get('/', (req, res) => {
     res.render('home',{
@@ -17,6 +20,20 @@ router.get('/', (req, res) => {
 router.get('/formulario',(req, res) => {
     res.render('formulario');
 });
+
+
+// configurar callback para controlar ruta /add
+
+router.post('/add', async (req, res) => {
+    console.log(new Alumnos (req.body)); // verificar si capturo los datos
+    const objAlumnos = new Alumnos(req.body);
+    await objAlumnos.save(); // función save() es para guardar en mongoDB
+    res.render('formulario',{
+        mensaje: 'Datos Guardados'
+    });
+    
+});
+
 
 // configurar callback para controlar ruta /calcula
 router.post('/calcula', (req, res) => {
