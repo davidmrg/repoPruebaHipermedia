@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,62 +39,62 @@
     </header>
 
 
-<div class="center">
+    <div class="center">
 
-    <section id="content">
+        <section id="content">
 
-        <div class="center">
-            <section id="contentForm">
+            <div class="center">
+                <section id="contentForm">
 
-                <h1 class="subheader">Formulario Alumnos</h1>
+                    <h1 class="subheader">Formulario Alumnos</h1>
 
-                <p align="center">
-                <form action="/edit/<%= alumno._id %>" method="POST">
-                    <label for="nombres">Nombres y Apellidos</label>
-                    <input type="text" name="nombre" value="<%= alumno.nombre %>" />
-                    <br>
-                    <br>
-
-
-                    <label for="contacto">Número Contacto</label>
-                    <input type="text" name="contacto" value="<%= alumno.contacto %>" />
-                    <br>
-                    <br>
-
-                    <label for="comentario">Comentarios</label>
-                    <textarea name="comentario" id="" cols="30" rows="10"
-                        placeholder="<%= alumno.comentario %>"></textarea>
-                    <br>
-                    <p align="center"><input type="submit" value="Enviar" class="btn btn-success" /></p>
+                    <p align="center">
+                    <form action="/edit/<%= alumno._id %>" method="POST">
+                        <label for="nombres">Nombres y Apellidos</label>
+                        <input type="text" name="nombre" value="<%= alumno.nombre %>" />
+                        <br>
+                        <br>
 
 
-                </form>
+                        <label for="contacto">Número Contacto</label>
+                        <input type="text" name="contacto" value="<%= alumno.contacto %>" />
+                        <br>
+                        <br>
 
-                </p>
+                        <label for="comentario">Comentarios</label>
+                        <textarea name="comentario" id="" cols="30" rows="10"
+                            placeholder="<%= alumno.comentario %>"></textarea>
+                        <br>
+                        <p align="center"><input type="submit" value="Enviar" class="btn btn-success" /></p>
 
 
-            </section>
-            <!--clearfix permite acomodar el footer para que no se monte arriba-->
-            <div class="clearfix"></div>
-        </div>
+                    </form>
 
-    </section>
+                    </p>
 
-    </section>
 
-    <aside id="sidebar">
-        <div id="nav-blog" class="sidebar-item">
-            <h3>Menu Sidebar</h3>
-            <a href="/formulario" class="btn btn-success">Formulario</a>
-            <a href="/edit" class="btn btn-success">Editar</a>
-            <a href="pagina3.html" class="btn btn-success">Pagina 3</a>
-        </div>
-    </aside>
-    <div class="clearfix"></div>
+                </section>
+                <!--clearfix permite acomodar el footer para que no se monte arriba-->
+                <div class="clearfix"></div>
+            </div>
 
-</div>
+        </section>
 
-<%- include('partials/footer') %>
+        </section>
+
+        <aside id="sidebar">
+            <div id="nav-blog" class="sidebar-item">
+                <h3>Menu Sidebar</h3>
+                <a href="/formulario" class="btn btn-success">Formulario</a>
+                <a href="/edit" class="btn btn-success">Editar</a>
+                <a href="/delete" class="btn btn-success">Borrar</a>
+            </div>
+        </aside>
+        <div class="clearfix"></div>
+
+    </div>
+
+    <%- include('partials/footer') %>
 
 </body>
 

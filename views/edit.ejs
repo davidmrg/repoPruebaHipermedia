@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,58 +38,59 @@
 
     </header>
 
- 
-<div id="slider" class="slider-big">
-    <h1>Bienvenido a proyecto Corte 3</h1>
-    <a href="/" class="btn-white">Home</a>
-</div>
 
-<div class="center">
-   
-    <section id="content">
-        <h2>Edicion de datos</h2>
-    <table class="table">
-        <caption class="text-center"></caption>
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Nombre completo</th>
-                <th>Número contacto</th>
-                <th>Comentarios</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-    <tbody>
-        <% for(var i = 0; i < listaRegistros.length; i++){ %>
-            <tr>
-                <td><%= i + 1 %></td>
-                <td><%= listaRegistros[i].nombre %></td>
-                <td><%= listaRegistros[i].contacto %></td>
-                <td><%= listaRegistros[i].comentario %></td>
-                <td><a href="/edit/<%= listaRegistros[i]._id %>" class="btn btn-warning" >Editar</a></td>
-            </tr>
-        <% } %>
-    </tbody>
+    <div id="slider" class="slider-big">
+        <h1>Bienvenido a proyecto Corte 3</h1>
+        <a href="/" class="btn-white">Home</a>
+    </div>
 
+    <div class="center">
 
-    </table>
+        <section id="content">
+            <h2>Edicion de datos</h2>
+            <table class="table">
+                <caption class="text-center"></caption>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Nombre completo</th>
+                        <th>Número contacto</th>
+                        <th>Comentarios</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < listaRegistros.length; i++){ %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= listaRegistros[i].nombre %></td>
+                        <td><%= listaRegistros[i].contacto %></td>
+                        <td><%= listaRegistros[i].comentario %></td>
+                        <td><a href="/edit/<%= listaRegistros[i]._id %>" class="btn btn-warning">Editar</a></td>
+                    </tr>
+                    <% } %>
+                </tbody>
 
 
-    </section>
-    
-   <aside id="sidebar">
-       <div id="nav-blog" class="sidebar-item">
-           <h3>Menu Sidebar</h3>
-           <a href="/formulario" class="btn btn-success">Formulario</a>
-           <a href="pagina2.html" class="btn btn-success">Pagina 2</a>
-           <a href="pagina3.html" class="btn btn-success">Pagina 3</a>
-        </div>
-    </aside>
-    <div class="clearfix"></div>
-    
-</div>
+            </table>
 
-<%- include('partials/footer') %> 
+
+        </section>
+
+        <aside id="sidebar">
+            <div id="nav-blog" class="sidebar-item">
+                <h3>Menu Sidebar</h3>
+                <a href="/formulario" class="btn btn-success">Formulario</a>
+                <a href="/edit" class="btn btn-success">Editar</a>
+                <a href="/delete" class="btn btn-success">Borrar</a>
+            </div>
+        </aside>
+        <div class="clearfix"></div>
+
+    </div>
+
+    <%- include('partials/footer') %>
 
 </body>
+
 </html>

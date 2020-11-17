@@ -2,38 +2,37 @@
 
 const express = require('express');
 var router = express.Router();
+// por si queremos usar el ejercicio de la tabla de multiplicar, línea 87
 // const fs = require ('fs');
 
+// modelo de bdd
 const Alumnos = require('../models/alumnos')
 
 // configurar callback (async / await) para controlar ruta /
 router.get('/', async (req, res) => {
     const listaRegistros = await Alumnos.find();
-    res.render('index',{
+    res.render('index', {
         listaRegistros
     });
-  });  
+});
 
 // configurar callback para controlar ruta /formularios
-router.get('/formulario',(req, res) => {
-    res.render('formulario',{
+router.get('/formulario', (req, res) => {
+    res.render('formulario', {
         mensaje: ''
     });
 });
 
-
 // configurar callback para controlar ruta /add
-
 router.post('/add', async (req, res) => {
-    console.log(new Alumnos (req.body)); // verificar si capturo los datos
+    console.log(new Alumnos(req.body)); // verificar si capturo los datos
     const objAlumnos = new Alumnos(req.body);
     await objAlumnos.save(); // función save() es para guardar en mongoDB
-    res.render('formulario',{
+    res.render('formulario', {
         mensaje: 'Los datos han sido guardados'
     });
-    
-});
 
+});
 
 // callback para borrar datos
 router.get('/delete', async (req, res) => {
@@ -44,7 +43,7 @@ router.get('/delete', async (req, res) => {
 });
 
 // callback para borrar dato específico
-router.get('/delete/:id', async(req, res) => {
+router.get('/delete/:id', async (req, res) => {
     const { id } = req.params;
     await Alumnos.remove({ _id: id });
     res.redirect('/');
@@ -52,22 +51,20 @@ router.get('/delete/:id', async(req, res) => {
 
 
 // configurar un callback para controlar la ruta /edit
-
-router.get('/edit', async(req, res) => {
+router.get('/edit', async (req, res) => {
     const listaRegistros = await Alumnos.find();
-    res.render('edit',{
+    res.render('edit', {
         listaRegistros
     });
 });
 
 // callback para buscar el registro a editar y para enviar
 // ese registro a la ruta que actualizará el registro
-
 router.get('/edit/:id', async (req, res) => {
     const listaRegistros = await Alumnos.find();
     const { id } = req.params;
     const alumno = await Alumnos.findById({ _id: id });
-    res.render('updateForm',{
+    res.render('updateForm', {
         alumno
     });
 });
@@ -115,5 +112,5 @@ router.post('/calcula', (req, res) => {
  */
 
 
-  module.exports = router;
+module.exports = router;
 

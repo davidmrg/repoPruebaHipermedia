@@ -1,14 +1,14 @@
- <%- include('partials/header') %>
- 
-    <div id="slider" class="slider-big">
-        <h1>Bienvenido a proyecto Corte 3</h1>
-        <a href="/" class="btn-white">Home</a>
-    </div>
+<%- include('partials/header') %>
 
-    <div class="center">
-       
-        <section id="content">
-            <h2>Contenido</h2>
+<div id="slider" class="slider-big">
+    <h1>Bienvenido a proyecto Corte 3</h1>
+    <a href="/" class="btn-white">Home</a>
+</div>
+
+<div class="center">
+
+    <section id="content">
+        <h2>Datos registrados en BDD:</h2>
         <table class="table">
             <caption class="text-center"></caption>
             <thead>
@@ -19,36 +19,37 @@
                     <th>Comentarios</th>
                 </tr>
             </thead>
-        <tbody>
-            <% for(var i = 0; i < listaRegistros.length; i++){ %>
+            <tbody>
+                <% for(var i = 0; i < listaRegistros.length; i++){ %>
                 <tr>
                     <td><%= i + 1 %></td>
                     <td><%= listaRegistros[i].nombre %></td>
                     <td><%= listaRegistros[i].contacto %></td>
                     <td><%= listaRegistros[i].comentario %></td>
                 </tr>
-            <% } %>
-        </tbody>
+                <% } %>
+            </tbody>
 
 
         </table>
 
 
-        </section>
-        
-       <aside id="sidebar">
-           <div id="nav-blog" class="sidebar-item">
-               <h3>Menu Sidebar</h3>
-               <a href="/formulario" class="btn btn-success">Formulario</a>
-               <a href="/edit" class="btn btn-success">Editar</a>
-               <a href="/delete" class="btn btn-success">Borrar</a>
-            </div>
-        </aside>
-        <div class="clearfix"></div>
-        
-    </div>
+    </section>
 
- <%- include('partials/footer') %> 
+    <aside id="sidebar">
+        <div id="nav-blog" class="sidebar-item">
+            <h3>Menu Sidebar</h3>
+            <a href="/formulario" class="btn btn-success">Formulario</a>
+            <a href="/edit" class="btn btn-success">Editar</a>
+            <a href="/delete" class="btn btn-success">Borrar</a>
+        </div>
+    </aside>
+    <div class="clearfix"></div>
+
+</div>
+
+<%- include('partials/footer') %>
 
 </body>
+
 </html>
