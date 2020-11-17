@@ -1,0 +1,62 @@
+<%- include('partials/header') %>
+
+
+<div class="center">
+
+    <section id="content">
+
+        <div class="center">
+            <section id="contentForm">
+
+                <h1 class="subheader">Formulario Alumnos</h1>
+
+                <p align="center">
+                <form action="/add" method="POST">
+                    <label for="nombres">Nombres y Apellidos</label>
+                    <input type="text" name="nombre" />
+                    <br>
+                    <br>
+
+
+                    <label for="contacto">Número Contacto</label>
+                    <input type="text" name="contacto" />
+                    <br>
+                    <br>
+
+                    <label for="comentario">Comentarios</label>
+                    <textarea name="comentario" id="" cols="30" rows="10"></textarea>
+                    <br>
+                    <p align="center"><input type="submit" value="Enviar" class="btn btn-success" /></p>
+
+                    <%= mensaje %>
+                </form>
+
+                </p>
+
+
+            </section>
+            <!--clearfix permite acomodar el footer para que no se monte arriba-->
+            <div class="clearfix"></div>
+        </div>
+
+    </section>
+
+    </section>
+
+    <aside id="sidebar">
+        <div id="nav-blog" class="sidebar-item">
+            <h3>Menu Sidebar</h3>
+            <a href="/formulario" class="btn btn-success">Formulario</a>
+            <a href="/edit" class="btn btn-success">Editar</a>
+            <a href="/delete" class="btn btn-success">Borrar</a>
+        </div>
+    </aside>
+    <div class="clearfix"></div>
+
+</div>
+
+<%- include('partials/footer') %>
+
+</body>
+
+</html>
