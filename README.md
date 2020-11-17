@@ -16,7 +16,7 @@ Sistema CRUD educacional desarrollado en Node.Js (Express) y CSS como parte de l
 2. ejecutar el comando:```git clone https://github.com/davidmrg/repoPruebaHipermedia.git```
 
 ### Pasos para ejecutar:
-1. Ingresar al directorio del proyecto (vía consola terminal / CMD), ingresar al sub-directorio /src.
+1. Ingresar al directorio del proyecto (vía consola terminal / CMD)
 2. Ejecutar comando```npm install``` para descargar e instalar dependencias
 3. Ejecutar comando```node server.js``` para ejecutar proyecto (Si usas nodemon:```nodemon server.js```)
 3. Abrir en un navegador: http://localhost:3000
